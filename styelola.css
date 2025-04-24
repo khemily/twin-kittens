@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(56, 52, 42);
+    color: white;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    background-color: #f54bb4;
+    padding: 20px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px 20px;
+}
+
+.logo {
+    height: 90px;
+}
+
+.language-selector button,
+.login-button {
+    background: none;
+    border: 1px solid rgb(233, 193, 18);
+    color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.content {
+    margin-top: 100px;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #0000, -1px 1px 0 #0000, 1px 1px 0 #0000;
+}
+
+.content h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #0000, -1px 1px 0 #0000, 1px 1px 0 #0000;
+}
+
+.catalogo {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.catalogo a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: rgb(255, 166, 0);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 #966917a9, 1px -1px 0 #0000, -1px 1px 0 #0000, 1px 1px 0 #0000;
+}
+
+.catalogo a:hover {
+    background-color: rgb(23, 71, 228);
+    color: rgb(0, 255, 242);
+}
+
+.imagem-extra {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    background-size: cover;
+    background-position: center;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f54bb4;
+}

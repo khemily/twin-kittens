@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obras BL</title>
+    <style>
+        /* Estilo geral */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Fundo escuro */
+            color: #fff;
+            background-image: url('yoo.jpg'); /* Substitua pelo caminho da sua imagem */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+         body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Camada preta semitransparente */
+            z-index: -1; /* Garante que fique atrás do conteúdo */
+}
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+           
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .top-button {
+            background-color: #ff6f91;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .top-button:hover {
+            background-color: #ff4a6e;
+        }
+
+        .category-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .category-buttons button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .btn-leve {
+            background-color: #007bff; /* Azul */
+        }
+
+        .btn-leve:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-mediano {
+            background-color: #ffc107; /* Amarelo */
+            color: #000;
+        }
+
+        .btn-mediano:hover {
+            background-color: #e0a800;
+        }
+
+        .btn-pesado {
+            background-color: #dc3545; /* Vermelho */
+        }
+
+        .btn-pesado:hover {
+            background-color: #a71d2a;
+        }
+
+        .search-bar {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .search-bar input {
+            width: 50%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .search-bar button:hover {
+            background-color: #0056b3;
+        }
+
+        .gallery {
+            display: none; /* Inicialmente escondido */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery.active {
+            display: grid; /* Mostra a galeria ativa */
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1); /* Expande a imagem ao passar o mouse */
+        }
+
+        .gallery-item .details {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .details {
+            opacity: 1; /* Mostra os detalhes ao passar o mouse */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"> <!-- Substitua "index.html" pelo caminho da sua página inicial -->
+            <img src="minhalogo.jpeg" alt="Logo" class="logo">
+        </a>
+        <button class="top-button">Entrar</button>
+    </header>
+   
+
+
+    <div class="category-buttons">
+        <button class="btn-leve" onclick="showGallery('leve')">Leve</button>
+        <button class="btn-mediano" onclick="showGallery('mediano')">Mediano</button>
+        <button class="btn-pesado" onclick="showGallery('pesado')">Pesado</button>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Pesquise obras de A a Z">
+        <button onclick="searchWorks()">Buscar</button>
+    </div>
+
+    <section id="leve" class="gallery">
+        <div class="gallery-item">
+            <img src="Doukyuuseilolo.jpg" alt="Obra Leve 1">
+            <div class="details">
+                <h3>Doukyuusei</h3>
+                <p>Categoria: Leve</p>
+                <p>Descrição: Uma história doce e tranquila.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="Here U Are l Poster.jpeg" alt="Obra Leve 2">
+            <div class="details">
+                <h3>Here U Are</h3>
+                <p>Categoria: Leve</p>
+                <p>Descrição: Uma narrativa cheia de romance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="mediano" class="gallery">
+        <div class="gallery-item">
+            <img src="killer crush (1).jpg" alt="Obra Mediana 1">
+            <div class="details">
+                <h3>Killer Crush</h3>
+                <p>Categoria: Mediano</p>
+                <p>Descrição: Uma história com momentos intensos.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="The guider member.jpg" alt="Obra Mediana 2">
+            <div class="details">
+                <h3>the Guild Member</h3>
+                <p>Categoria: Mediano</p>
+                <p>Descrição: Drama e romance em equilíbrio.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pesado" class="gallery">
+        <div class="gallery-item">
+            <img src="rose.jpg" alt="Obra Pesada 1">
+            <div class="details">
+                <h3>Rose and Champagner</h3>
+                <p>Categoria: Pesado</p>
+                <p>Descrição: Uma história intensa e impactante.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="JINX.la.jpg" alt="Obra Pesada 2">
+            <div class="details">
+                <h3>Jinx</h3>
+                <p>Categoria: Pesado</p>
+                <p>Descrição: Emoções fortes e temas profundos.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Obras BL. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function showGallery(category) {
+            const galleries = document.querySelectorAll('.gallery');
+            galleries.forEach(gallery => gallery.classList.remove('active'));
+            document.getElementById(category).classList.add('active');
+        }
+
+        function searchWorks() {
+            const searchInput = document.getElementById("searchInput").value.toLowerCase();
+            const galleries = document.querySelectorAll('.gallery-item');
+            let found = false;
+
+            galleries.forEach(item => {
+                const title = item.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(searchInput)) {
+                    item.style.display = 'block'; // Mostra itens correspondentes
+                    found = true;
+                } else {
+                    item.style.display = 'none'; // Esconde itens não correspondentes
+                }
+            });
+
+            if (!found) {
+                alert("Nenhum resultado encontrado para sua pesquisa.");
+            }
+        }
+    </script>
+</body>
+</html>

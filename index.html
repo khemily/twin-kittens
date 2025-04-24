@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <style>
+        /* Estilo geral */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Fundo escuro */
+            color: #fff;
+            background-image: url('BL.jpg'); /* Substitua pelo caminho da sua imagem */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+         body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Camada preta semitransparente */
+            z-index: -1; /* Garante que fique atrás do conteúdo */
+}
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 230px;
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+           
+        }
+
+        .logo {
+            height: 200px;
+        }
+
+        .top-button {
+            background-color: #ff6f91;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .top-button:hover {
+            background-color: #ff4a6e;
+        }
+
+        .category-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .category-buttons button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .btn-leve {
+            background-color: #007bff; /* Azul */
+        }
+
+        .btn-leve:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-mediano {
+            background-color: #ffc107; /* Amarelo */
+            color: #b42828;
+        }
+
+        .btn-mediano:hover {
+            background-color: #e0a800;
+        }
+
+        .btn-pesado {
+            background-color: #dc3545; /* Vermelho */
+        }
+
+        .btn-pesado:hover {
+            background-color: #a71d2a;
+        }
+
+        .search-bar {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .search-bar input {
+            width: 50%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .search-bar button:hover {
+            background-color: #0056b3;
+        }
+
+        .gallery {
+            display: none; /* Inicialmente escondido */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery.active {
+            display: grid; /* Mostra a galeria ativa */
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1); /* Expande a imagem ao passar o mouse */
+        }
+
+        .gallery-item .details {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .details {
+            opacity: 1; /* Mostra os detalhes ao passar o mouse */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+    
+    <header>
+        <h1>Bem-vindo ao Mundo dos Mangás!</h1>
+        <img src="minhalogo.jpeg" alt="Logo" class="logo">
+    </header>
+    
+    <main>
+        <h2>Explore as categorias de mangás!</h2>
+        <p>Descubra novos títulos e os mais populares do momento.</p>
+        <button onclick="window.location.href='lalalulu.html'" class="top-button">Ir para Lalalulu</button>
+    </main>
+    </main>
+    <footer>
+        <p>&copy; 2023 Patolino. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
